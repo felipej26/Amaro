@@ -19,6 +19,17 @@
  * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.connections.html
  */
 
+ /* {
+    adapter: 'sails-elastic',
+    hosts: ['http://127.0.0.1:9200'],
+    keepAlive: false,
+    sniffOnStart: true,
+    maxRetries: 10,
+    deadTimeout: 40000,
+    sniffOnConnectionFault: true,
+    apiVersion: '2.0'
+  }, */
+
 module.exports.connections = {
 
   /***************************************************************************
@@ -89,4 +100,46 @@ module.exports.connections = {
   *                                                                          *
   ***************************************************************************/
 
+  mySqlAdapterDev: {
+		adapter: 'sails-mysql',
+		host: process.env.OPENSHIFT_MYSQL_DB_HOST || '127.0.0.1',
+		user: process.env.OPENSHIFT_MYSQL_DB_USERNAME || 'root',
+		password: process.env.OPENSHIFT_MYSQL_DB_PASSWORD || 'root',
+		port: process.env.OPENSHIFT_MYSQL_DB_PORT || 3306,
+		database: 'amaro'
+  },
+  
+  mySqlAdapterProd: {
+		adapter: 'sails-mysql',
+		host: process.env.OPENSHIFT_MYSQL_DB_HOST || '127.0.0.1',
+		user: process.env.OPENSHIFT_MYSQL_DB_USERNAME || 'root',
+		password: process.env.OPENSHIFT_MYSQL_DB_PASSWORD || 'root',
+		port: process.env.OPENSHIFT_MYSQL_DB_PORT || 3306,
+		database: 'amaro'
+  },
+  
+   //couchbase
+    cb: {
+      host: '127.0.0.1',
+      port: 3306,
+      user: 'root',
+      version: '3.0.3',
+      pass: 'root',
+      operationTimeout: 60 * 1000, // 60s
+
+      bucket: {
+          name: 'bucket',
+          pass: 'bucketPassword'
+      }
+    },
+
+    //elasticsearch
+    es: {
+      host: ['127.0.0.1:9200'],
+      log: 'error',
+      index: 'index',
+      numberOfShards: 5,
+      requestTimeout: 30000,
+      numberOfReplicas: 1
+    }
 };
