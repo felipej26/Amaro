@@ -14,9 +14,10 @@ module.exports = {
       size: 250,
       required: true
     },
-    
-    categoria: {
-      type: 'integer',
+
+    descricao: {
+      type: 'string',
+      size: 500,
       required: true
     },
 
@@ -25,31 +26,38 @@ module.exports = {
       size: 500,
       required: true
     },
-
-    filhos: {
-			collection: 'ProdutoFilho',
-			via: 'produtoPai',
-			required: false
-		}
-  },
-
-  mapping: {
-    "_all": {
-        "enabled": false
+    
+    categoria: {
+      type: 'integer',
+      required: true
     },
-    nome: {
-        type: 'string',
-        analyzer: 'whitespace',
-        fields: {
-            raw: {
-                type: 'string',
-                index: 'not_analyzed'
-            }
-        }
+
+    subcategoria: {
+      type: 'integer',
+      required: true
     },
-    imagem: {
-        type: 'string',
-        analyzer: 'whitespace'
+
+    cor: {
+      type: 'string',
+      size: 100,
+      required: true
+    },
+
+    tecido: {
+      type: 'string',
+      size: 100,
+      required: true
+    },
+
+    tamanho: {
+      type: 'string',
+      size: 10,
+      required: true
+    },
+
+    preco: {
+      type: 'float',
+      required: true
     }
   }
 };

@@ -1,43 +1,23 @@
-<ul>
-    
-  <% produtos.forEach(function(produto) { %>
-    <li>
-    <img src="../img/produtos/<%= produto.imagem %>" alt="<%= produto.nome %>" style="height:200px; width:200px;">
-    
-    <br>
-    <%= produto.nome %>
-    <button class="btn btn-primary btn-block ler-mais" id="abrir-noticia-1" >Leia Mais</button>
-    </li>
-  <% }); %>
-</ul>
 
+<%- partial ('../produto/filtros') %>
 
-<!-- <ul>
-    
-  <% produtos.forEach(function(produto) { %>
-    <% produto.filhos.forEach(function(filho) { %>
-      <li>
-      <% if (filho.mascara) { %>
-      <svg width="200px" height="200px">
-        <filter id="redden">
-          <feColorMatrix type="matrix" values="1 0 1 0 0 
-                                               0 0 0 0 0 
-                                               0 0 0 0 0 
-                                               0 0 0 1 0"/>
-        </filter>
+<div id="lista-produtos">
 
-        <image filter="url(#redden)" width="200" height="200" 
-        preserveAspectRatio="xMinYMin slice"
-        xlink:href="../img/produtos/<%= produto.imagem %>"/>
-      </svg>
+  <div id="produtos">
+  <%
+  produtos.forEach(function(produto) { 
+  %>
+
+    <a>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+        <img src="../img/produtos/<%= produto.imagem %>" alt="<%= produto.nome %>" style="height:200px; width:200px;">
       
-      <% } else { %>
-      <img src="../img/produtos/<%= produto.imagem %>" alt="<%= produto.nome %>" style="height:200px; width:200px;">
-      <% } %>
-      
-      <br>
-      <%= produto.nome %>
-      </li>
-    <% }) %>
-  <% }); %>
-</ul> -->
+        <br>
+        <%= produto.nome %>
+      </div>
+    </a>
+  <% 
+  }); 
+  %>
+  </div>
+<div>
