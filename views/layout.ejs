@@ -7,6 +7,7 @@
 
     <title>Amaro</title>
 
+    <link href="../css/style.default.css" rel="stylesheet" id="theme-stylesheet">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -23,16 +24,16 @@
   <body>
 
     <header>
-      <img src="../img/amaro.png">
-      
+      <div class="text-center">
+        <img src="../img/amaro.png">
+      </div>
       <br>
 
       <%- partial ('categorias') %>
     </header>
 
-    <div class="container">
       <%- body %>
-    </div>
+
 
     <footer>
 
@@ -89,9 +90,10 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
+  
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/dependencies/bootstrap-hover-dropdown.js"></script>
     <script src="/js/dependencies/bootstrap.js"></script>
     <script src="/js/dependencies/bootstrap.min.js"></script>
     <script src="/js/dependencies/codigos.js"></script>

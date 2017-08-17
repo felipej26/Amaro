@@ -5,7 +5,13 @@
 
   <div id="produtos">
   <%
-  produtos.forEach(function(produto) { 
+  produtos.forEach(function(p) { 
+      var produto;
+      if (tipo == 0) {
+          produto = p;
+      } else {
+          produto = p._source;
+      }
   %>
 
     <a>

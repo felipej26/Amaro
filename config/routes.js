@@ -38,6 +38,8 @@ module.exports.routes = {
 
   'get /produto/produtos': 'produto.show',
 
+  'get /moda-feminina/:title': 'ProdutoController.showcategoria'
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

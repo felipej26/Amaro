@@ -1,4 +1,13 @@
 
-#categorias {
+#navbar {
     background-color: #000000;
+}
+
+#navbarFiltro {
+    background-color: transparent;
+}
+
+.ui-helper-hidden-accessible { 
+    position: absolute; 
+    left: -9999px; 
 }

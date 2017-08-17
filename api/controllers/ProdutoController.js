@@ -6,6 +6,15 @@
  */
 
 module.exports = {
+
+    showcategoria: function(req, res) {
+        console.log(req.param('title'));
+        ES.search(req.param('title')).then(function(dados) {
+            console.log(JSON.stringify(dados));
+            res.view('produto/produtos', {produtos: dados.hits.hits, tipo: 1 });
+        });
+    },
+
 	show: function(req, res) {
 
         console.log('Chegou Aqui 1');
