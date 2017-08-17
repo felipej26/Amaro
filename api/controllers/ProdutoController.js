@@ -7,10 +7,16 @@
 
 module.exports = {
 
-    showcategoria: function(req, res) {
-        console.log(req.param('title'));
-        ES.search(req.param('title')).then(function(dados) {
-            console.log(JSON.stringify(dados));
+    showbyurl: function(req, res) {
+        var query = 'categoria:' + req.param('categoria');
+
+        if (req.param('subcategoria')) {
+            query += '&q=subcategoria:' + req.param('subcategoria');
+        }
+        
+        console.log('Query: ' + query);
+
+        ES.searchByCategorie(req.param('categoria'), req.param('subcategoria')).then(function(dados) {
             res.view('produto/produtos', {produtos: dados.hits.hits, tipo: 1 });
         });
     },
@@ -22,14 +28,6 @@ module.exports = {
         Produto.find()
         .exec(function(err, produtos) {
             if (err) return res.send(err, 500);
-
-            console.log('Chegou Aqui 2');
-
-            produtos.forEach(function(produto) {
-                //ES.index(produto);
-            });
-
-            console.log('Chegou Aqui 4');
 
             res.view('produto/produtos', { produtos: produtos, tipo: 0 });
         });

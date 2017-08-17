@@ -28,12 +28,14 @@ module.exports = {
     },
     
     categoria: {
-      type: 'integer',
+      type: 'string',
+      size: 100,
       required: true
     },
 
     subcategoria: {
-      type: 'integer',
+      type: 'string',
+      size: 100,
       required: true
     },
 

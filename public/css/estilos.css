@@ -1,3 +1,7 @@
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+}
 
 #navbar {
     background-color: #000000;
@@ -5,6 +9,34 @@
 
 #navbarFiltro {
     background-color: transparent;
+}
+
+.logo {
+    margin-top: 10px;
+}
+
+.box-produto {
+    text-align: center;
+}
+
+.image-produto { 
+    width: 100%;
+    /*
+    box-sizing: border-box;
+    display: block;
+    */
+}
+
+.nome-produto {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.info-produto {
+    color: black;
 }
 
 .ui-helper-hidden-accessible { 

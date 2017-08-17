@@ -11,8 +11,18 @@
 
 module.exports.bootstrap = function(cb) {
 
-  //ES.createIndexProduto();
+  /*
+  ES.createIndexProduto();
 
+  Produto.find()
+  .exec(function(err, produtos) {
+    console.log('Carregando Produtos');
+    produtos.forEach(function(produto) {
+        ES.index(produto);
+    });
+  });
+  */
+  
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
   cb();

@@ -1,7 +1,7 @@
 
 <%- partial ('../produto/filtros') %>
 
-<div id="lista-produtos">
+<div id="lista-produtos" >
 
   <div id="produtos">
   <%
@@ -14,14 +14,20 @@
       }
   %>
 
-    <a>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-        <img src="../img/produtos/<%= produto.imagem %>" alt="<%= produto.nome %>" style="height:200px; width:200px;">
-      
+    <div class="box-produto col-lg-3 col-md-3 col-sm-6 col-xs-6">
+      <a onclick="abrirProduto(<%= produto.id %>)">
+        <div>
+          <img class="image-produto img-responsive" src="/img/produtos/<%= produto.imagem %>" alt="<%= produto.nome %>">
+        </div>
         <br>
-        <%= produto.nome %>
-      </div>
-    </a>
+        <div class="info-produto">
+          <div class="nome-produto">
+            <%= produto.nome %>
+          </div>
+          R$ <%= produto.preco %>
+        </div>
+      </a>
+    </div>
   <% 
   }); 
   %>

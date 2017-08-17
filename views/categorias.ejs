@@ -1,6 +1,5 @@
 <div id="categorias">
   <div class="navbar navbar-default yamm" role="navigation" id="navbar">
-    <div class="container">
       <div class="navbar-header">
         <div class="navbar-buttons">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
@@ -17,12 +16,12 @@
       <div class="navbar-collapse collapse" id="navigation">
         <ul class="nav navbar-nav navbar-left">
           <li class="dropdown yamm-fw">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">
+            <a href="#" onclick="insertParam('tamanho', 123)" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">
               Novidades
             </a>
           </li>
           <li class="dropdown yamm-fw">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">
+            <a href="/moda-feminina/roupas" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">
               Roupas
             </a>
             <ul class="dropdown-menu">
@@ -32,10 +31,11 @@
                     <div class="col-sm-3">
                       <h5>Categorias</h5>
                       <ul>
-                        <li><a href="category.html">Todas as Roupas</a></li>
-                        <li><a href="category.html">Mais Vendidos</a></li>
-                        <li><a href="category.html">Vestidos</a></li>
-                        <li><a href="category.html">Blusas</a></li>
+                        <li><a href="/moda-feminina/roupas/vestidos">Vestidos</a></li>
+                        <li><a href="/moda-feminina/roupas/blusas">Blusas</a></li>
+                        <li><a href="/moda-feminina/roupas/camisas">Camisas</a></li>
+                        <li><a href="/moda-feminina/roupas/regatas">Regatas</a></li>
+                        <li><a href="/moda-feminina/roupas/calcas">Calças</a></li>
                       </ul>
                     </div>
                   </div>
@@ -57,6 +57,20 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">
               Active
             </a>
+            <ul class="dropdown-menu">
+              <li>
+                <div class="yamm-content">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h5>Categorias</h5>
+                      <ul>
+                        <li><a href="/moda-feminina/active/body">Body</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </li>
           <li class="dropdown yamm-fw">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">
@@ -76,15 +90,14 @@
       </div>
 
       <div class="collapse clearfix" id="search">
-        <form class="navbar-form" role="search">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search" id="txtBusca">
+            <input type="text" class="form-control" placeholder="Search" id="txtBusca" onkeypress="return runScript(event)">
             <span class="input-group-btn">
-			  <button type="submit" class="btn btn-primary" onclick="buscar()"><i class="fa fa-search"></i></button>
+			  <button type="submit" class="btn btn-primary" onclick="buscar()" onkeypress="return runScript(event)">
+
+              </button>
 		    </span>
           </div>
-        </form>
       </div>
-    </div>
   </div>
 </div>

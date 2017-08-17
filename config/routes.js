@@ -33,12 +33,14 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {
-    view: 'homepage'
+    view: 'index'
   },
 
   'get /produto/produtos': 'produto.show',
 
-  'get /moda-feminina/:title': 'ProdutoController.showcategoria'
+  'get /moda-feminina/:categoria': 'ProdutoController.showbyurl',
+
+  'get /moda-feminina/:categoria/:subcategoria': 'ProdutoController.showbyurl'
 
   /***************************************************************************
   *                                                                          *

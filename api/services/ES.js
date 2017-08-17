@@ -15,27 +15,6 @@ module.exports = {
         client.indices.create({
             index: 'catalogo',
             body: {
-                "settings": {
-                    "analysis": {
-                        "filter": {
-                            "autocomplete_filter": {
-                                "type": "edge_ngram",
-                                "min_gram": 1,
-                                "max_gram": 10
-                            }
-                        },
-                        "analyzer": {
-                            "autocomplete": {
-                                "type": "custom",
-                                "tokenizer": "standard",
-                                "filter": [
-                                    "lowercase",
-                                    "autocomplete_filter"
-                                ]
-                            }
-                        }
-                    }
-                },
                 "mappings": {
                     "produtos": {
                         "properties": {
@@ -51,16 +30,13 @@ module.exports = {
                                 "index": "not_analyzed"
                             },
                             "categoria": {
-                                "type": "integer",
-                                "index": "not_analyzed"
+                                "type": "string"
                             },
                             "subcategoria": {
-                                "type": "integer",
-                                "index": "not_analyzed"
+                                "type": "string"
                             },
                             "cor": {
-                                "type": "string",
-                                "index": "not_analyzed"
+                                "type": "string"
                             },
                             "tecido": {
                                 "type": "string",
@@ -104,6 +80,33 @@ module.exports = {
                 query: {
                     query_string:{
                         query: busca
+                    }
+                }
+            }
+        }).then(function (dados) {
+            return dados;
+        }, function (err) {
+            console.log(err.message);
+        });
+    },
+
+    searchByCategorie: function(categoria, subcategoria) {
+        return client.search({
+            index: 'catalogo',
+            type: 'produtos',
+            body: {
+                query: {
+                    bool: {
+                        must: {
+                            term: {
+                                "categoria": categoria
+                            }
+                        },
+                        filter: {
+                            term: {
+                                "subcategoria": subcategoria
+                            }
+                        }
                     }
                 }
             }
