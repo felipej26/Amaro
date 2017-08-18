@@ -67,7 +67,28 @@ function criarElementos(data) {
   });
 }
 
-function abrirProduto(id) {
+$(document).ready(function() {
+  $(".slidingDiv").hide();
+  $(".show_hide").show();
+
+	$('.show_hide').click(function(){
+	  $(".slidingDiv").slideToggle();
+	});
+});
+
+function abrirProduto(id, imagem) {
+
+  $("#box-produto-" + id).append(
+    "<div class=\"slidingDiv box-produto col-lg-3 col-md-3 col-sm-6 col-xs-6\">" +
+      "<img class=\"image-produto img-responsive\" src=\"" + imagem + "\">" +
+      "<br>" +
+      "<a href=\"#\" class=\"show_hide\">" +
+        "<input type=\"button\" name=\"btn-close\" value=\"Fechar\">" +
+      "</a>" +
+    "</div>"
+  );
+
+  /*
   $.ajax({
     url: serverElasticSearch + "/catalogo/produtos/_search?q=id:" + id,
     type: "GET",
@@ -76,6 +97,7 @@ function abrirProduto(id) {
       alert(JSON.stringify(produto));
     },
   });
+  */
 }
 
 function runScript(e) {
@@ -140,3 +162,4 @@ $(function(){
     minLength: 2
   });
 });
+
