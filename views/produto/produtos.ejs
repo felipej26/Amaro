@@ -1,6 +1,15 @@
 
 <%- partial ('../produto/filtros') %>
 
+<br>
+<br>
+
+<a href="#" class="show_hide">	
+ 	<input type="button" name="btn-quickshop" value="Quickshop">
+ </a>
+
+
+
 <div id="lista-produtos" >
 
   <div id="produtos">
@@ -14,8 +23,8 @@
       }
   %>
 
-    <div class="box-produto col-lg-3 col-md-3 col-sm-6 col-xs-6">
-      <a onclick="abrirProduto(<%= produto.id %>)">
+    <div class="box-produto col-lg-3 col-md-3 col-sm-6 col-xs-6" id="box-produto-<%= produto.id %>">
+      <a onclick="abrirProduto(<%= produto.id %>, '/img/produtos/<%= produto.imagem %>')">
         <div>
           <img class="image-produto img-responsive" src="/img/produtos/<%= produto.imagem %>" alt="<%= produto.nome %>">
         </div>
@@ -33,3 +42,4 @@
   %>
   </div>
 <div>
+

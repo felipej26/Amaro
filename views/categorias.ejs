@@ -16,7 +16,7 @@
       <div class="navbar-collapse collapse" id="navigation">
         <ul class="nav navbar-nav navbar-left">
           <li class="dropdown yamm-fw">
-            <a href="#" onclick="insertParam('tamanho', 123)" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">
               Novidades
             </a>
           </li>
@@ -93,7 +93,7 @@
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Search" id="txtBusca" onkeypress="return runScript(event)">
             <span class="input-group-btn">
-			  <button type="submit" class="btn btn-primary" onclick="buscar()" onkeypress="return runScript(event)">
+			  <button type="submit" class="btn btn-primary" onclick="buscar()">
 
               </button>
 		    </span>
@@ -101,3 +101,5 @@
       </div>
   </div>
 </div>
+
+<div id="results"></div>
